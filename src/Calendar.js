@@ -436,7 +436,8 @@ class Calendar extends React.Component {
      month: PropTypes.shape({
        header: elementType,
        dateHeader: elementType,
-       event: elementType
+       event: elementType,
+       dateContentRow: elementType
      })
    }),
 

@@ -9,6 +9,7 @@ import TimeGrid from './TimeGrid';
 class Week extends React.Component {
   static propTypes = {
     date: PropTypes.instanceOf(Date).isRequired,
+    components: PropTypes.object.isRequired
   };
 
   static defaultProps = TimeGrid.defaultProps;
@@ -17,8 +18,10 @@ class Week extends React.Component {
     let { date, ...props } = this.props
     let range = Week.range(date, this.props)
 
+    const CustomTimeGrid = this.props.components.timeGrid || TimeGrid
+
     return (
-      <TimeGrid {...props} range={range} eventOffset={15} />
+      <CustomTimeGrid {...props} range={range} eventOffset={15} />
     );
   }
 }
